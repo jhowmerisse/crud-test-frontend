@@ -1,0 +1,28 @@
+.list-container {
+  margin: 10px auto;
+}
+
+.list-header {
+  display: flex;
+  justify-content: center;
+}
+
+.list-plus-icon {
+  width: 80px;
+  text-align: end;
+  align-self: center;
+}
+
+.list-container h1 {
+  color: #d41b58;
+}
+
+.list-cards {
+  align-items: center;
+}
+
+.list-cards ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}

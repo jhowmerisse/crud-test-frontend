@@ -1,0 +1,29 @@
+.register-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-content {
+  width: 500px;
+}
+
+.register-container h1 {
+  color: #d41b58;
+}
+
+.register-form-input {
+  background: #1a1a1a;
+  border: 1px solid gray;
+  margin-top: 10px;
+  color: #fff;
+  border-radius: 0;
+  padding: 15px;
+  transition: all 0.4s;
+}
+
+.register-back {
+  float: left;
+  margin-top: 10px;
+}
