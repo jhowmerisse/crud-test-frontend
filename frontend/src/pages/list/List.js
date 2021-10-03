@@ -14,7 +14,7 @@ const List = () => {
     setData(response.data);
   };
 
-  useEffect(getDevelopers, []);
+  useEffect(() =>  getDevelopers(), [data]);
 
   return (
     <div className="list-container">

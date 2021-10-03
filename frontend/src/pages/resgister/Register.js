@@ -85,10 +85,12 @@ const Register = ({ data, isOpenModal }) => {
             value={datanascimento}
             onChange={(e) => setDatanascimento(e.target.value)}
           />
-          <button type="submit">Salvar</button>
+          <div className="register-form-footer">
           <Link className="register-back" to="/developers">
             <FaBackward color={"#d41b58"} size={40} />
           </Link>
+          <button type="submit">Salvar</button>
+          </div>
         </form>
       </div>
     </div>

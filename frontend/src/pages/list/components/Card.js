@@ -56,12 +56,10 @@ const Card = ({ data, refresh }) => {
       />
       <Modal
         isOpen={isOpenModal}
-        // onAfterOpen={afterOpenModal}
         onRequestClose={() => setIsOpenModal(false)}
         style={customStyles}
-        contentLabel="Example Modal"
       >
-        <Register data={data} isOpenModal={isOpenModal}/>
+        <Register data={data} isOpenModal={isOpenModal} />
       </Modal>
     </div>
   );

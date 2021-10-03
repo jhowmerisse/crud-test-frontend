@@ -23,7 +23,17 @@
   transition: all 0.4s;
 }
 
+.register-form-footer {
+  display: flex;
+}
+.register-form-footer button {
+  margin-left: 100px;
+}
+
 .register-back {
-  float: left;
   margin-top: 10px;
+}
+
+.ReactModal__Content {
+  width: 700px;
 }
