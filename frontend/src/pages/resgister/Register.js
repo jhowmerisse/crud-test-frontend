@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import "./Register.css";
-import { Link, useHistory } from "react-router-dom";
-import { FaBackward } from "react-icons/fa";
+import {
+  RegisterContainer,
+  RegisterContent,
+  RegisterForm,
+  RegisterInput,
+  RegisterTitle,
+} from "./Register.styled";
+import PropTypes from "prop-types";
 
+import { useHistory } from "react-router-dom";
 import api from "../../services/api";
+import RegisterFooter from "./components/RegisterFooter/RegisterFooter";
 
 const Register = ({ data, isOpenModal }) => {
-  console.log(data);
   const history = useHistory();
   const [nome, setNome] = useState(data ? data.nome : "");
   const [sexo, setSexo] = useState(data ? data.sexo : "");
@@ -43,58 +49,72 @@ const Register = ({ data, isOpenModal }) => {
   };
 
   return (
-    <div className="register-container">
-      <div className="register-content">
-        <h1>informações para cadastro</h1>
-        <form
+    <RegisterContainer>
+      <RegisterContent>
+        <RegisterTitle>Informações de Cadastro</RegisterTitle>
+        <RegisterForm
           onSubmit={isOpenModal ? handleUpdateDeveloper : handleAddDeveloper}
         >
-          <input
+          <RegisterInput
             className="register-form-input"
             placeholder="nome"
             type="text"
+            maxLength="100"
             value={nome}
+            required
             onChange={(e) => setNome(e.target.value)}
           />
-          <input
+          <RegisterInput
             className="register-form-input"
             placeholder="sexo"
             type="text"
+            maxLength="1"
             value={sexo}
+            required
             onChange={(e) => setSexo(e.target.value)}
           />
-          <input
+          <RegisterInput
             className="register-form-input"
             placeholder="idade"
             type="number"
-            min="5"
             value={idade}
+            required
             onChange={(e) => setIdade(e.target.value)}
           />
-          <input
+          <RegisterInput
             className="register-form-input"
             placeholder="hobby"
             type="text"
+            maxLength="100"
             value={hobby}
+            required
             onChange={(e) => setHobby(e.target.value)}
           />
-          <input
+          <RegisterInput
             className="register-form-input"
             placeholder="data de nascimento"
             type="date"
             value={datanascimento}
+            required
             onChange={(e) => setDatanascimento(e.target.value)}
           />
-          <div className="register-form-footer">
-          <Link className="register-back" to="/developers">
-            <FaBackward color={"#d41b58"} size={40} />
-          </Link>
-          <button type="submit">Salvar</button>
-          </div>
-        </form>
-      </div>
-    </div>
+          <RegisterFooter isOpenModal={isOpenModal} />
+        </RegisterForm>
+      </RegisterContent>
+    </RegisterContainer>
   );
+};
+
+Register.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    nome: PropTypes.string.isRequired,
+    sexo: PropTypes.string.isRequired,
+    idade: PropTypes.number.isRequired,
+    hobby: PropTypes.string.isRequired,
+    datanascimento: PropTypes.string.isRequired,
+  }),
+  isOpenModal: PropTypes.bool,
 };
 
 export default Register;

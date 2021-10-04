@@ -1,4 +1,6 @@
-.card-container {
+import styled from "styled-components";
+
+export const CardContainer = styled.div`
   width: 300px;
   color: white;
   background-color: #272b2e;
@@ -7,24 +9,16 @@
   position: relative;
   text-align: left;
   margin: 5px;
-}
+`;
 
-.card-container strong {
-  font-size: 20px;
-}
-
-.card-container p {
-  font-style: italic;
-}
-
-.card-icon-trash {
+export const CardIconTrash = styled.div`
   position: absolute;
   right: 20px;
   top: 20px;
-}
+`;
 
-.card-icon-edit {
+export const CardIconEdit = styled.div`
   position: absolute;
   right: 50px;
   top: 20px;
-}
+`;

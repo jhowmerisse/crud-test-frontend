@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./List.css";
+import { ListContainer } from "./List.styled";
 
-import { Link } from "react-router-dom";
-import { BsPlusCircle } from "react-icons/bs";
-import Card from "./components/Card";
 import api from "../../services/api";
+import ListHeader from "./components/ListHeader/ListHeader";
+import ListCards from "./components/ListCards/ListCards";
 
 const List = () => {
   const [data, setData] = useState([]);
@@ -14,26 +13,13 @@ const List = () => {
     setData(response.data);
   };
 
-  useEffect(() =>  getDevelopers(), [data]);
+  useEffect(() => getDevelopers(), []);
 
   return (
-    <div className="list-container">
-      <div className="list-header">
-        <div className="list-header-title">
-          <h1>lista de devs</h1>
-        </div>
-        <Link className="list-plus-icon button-icon" to="/register">
-          <BsPlusCircle color="#d41b58" size={30} />
-        </Link>
-      </div>
-      <div className="list-cards">
-        <ul>
-          {data.map((developer) => (
-            <Card key={developer.id} data={developer} refresh={getDevelopers} />
-          ))}
-        </ul>
-      </div>
-    </div>
+    <ListContainer>
+      <ListHeader />
+      <ListCards data={data} refresh={getDevelopers} />
+    </ListContainer>
   );
 };
 
