@@ -25,7 +25,7 @@ const RegisterFooter = ({ isOpenModal }) => {
   );
 };
 
-RegisterFooter.protoTypes = {
+RegisterFooter.propTypes = {
   isOpenModal: PropTypes.bool,
 };
 
