@@ -25,7 +25,7 @@ ListCards.propTypes = {
       idade: PropTypes.number.isRequired,
       hobby: PropTypes.string.isRequired,
       datanascimento: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ),
   refresh: PropTypes.func,
 };
