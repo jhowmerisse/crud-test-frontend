@@ -28,6 +28,7 @@
   - o código foi criado em inglês porém com as variáveis retornadas do backend mantidas em português de acordo com documentação
   - foi pensado na componentização como descrito acima
   - foi utilizado prototipação para melhor entendimento, uso e manutenção do código
+  - utilização de lint
   - houve um problema e isso impossibilitou a execução dos testes unitários - serão adicionados futuramente
 
 - para facilidade na utilização e desenvolvimento do produto:
